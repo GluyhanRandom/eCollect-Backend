@@ -1,0 +1,6 @@
+@eCollectAPI_HostAddress = http://localhost:5229
+
+GET {{eCollectAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
