@@ -31,6 +31,13 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddScoped<ICRUDOperationDL, CRUDOperationDL>();
 builder.Services.AddSingleton<MongoClient>();
 
+var port = Environment.GetEnvironmentVariable("PORT");
+
+if (!string.IsNullOrEmpty(port))
+{
+    builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
+}
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
